@@ -31,8 +31,8 @@ setInterval(function() {
 
 
 
-// For top sites time-information
-function buildPopupDom(mostVisitedURLs) {
+// For top sites list
+function buildTopsites(mostVisitedURLs) {
     var popupDiv = document.getElementById('most-visited');
     var ul = popupDiv.appendChild(document.createElement('ul'));
 
@@ -66,40 +66,37 @@ function getURL(id) {
 
 }
 
-chrome.topSites.get(buildPopupDom);
+chrome.topSites.get(buildTopsites);
 
 
 function CallMethod() {
     $.ajaxSetup({
         headers: {
-            'Authorization': "Client-ID abac205bc6a93d2eaa1440ed5b07d38b8d01c66ecd9cff35eb0436a46a7e62d2",
+            'Authorization': "Client-ID abac205bc6a93d2eaa1440ed5b07d38b8d01c66ecd9cff35eb0436a46a7e62d2", // API Authorization for Unsplash API
         }
     });
 
     $.getJSON('https://api.unsplash.com/photos/random', {
-        "w": "1920",
+        "w": "1920", // Image height and width. 1080 is nice and scaleable.
         "h": "1080"
     }).done(function(data) {
-        console.log(data);
-        console.log(data.urls.full)
         $('body').css('background-image', 'url(' + data.urls.custom + ')');
 
+		// Tracking required by Unsplash API guidelines
         UTM = "?utm_source=born&utm_medium=referral&utm_campaign=api-credit";
-
 
         user_firstname = data.user.first_name;
         user_lastname = data.user.last_name;
         user_url = data.user.links.html + UTM;
         unsplash_url = "www.unsplash.com" + UTM;
 
+		
         if (user_lastname == null) {
           $("#image-attribution").append('<p>&lt;Photo By <a href="' + user_url + '">' + user_firstname + '</a> / <a href="' + unsplash_url + '"> Unsplash</a>>');
         } else {
             $("#image-attribution").append('<p>&lt;Photo By <a href="' + user_url + '">' + user_firstname + ' ' + user_lastname + '</a> / <a href="' + unsplash_url + '"> Unsplash</a>>');
         }
 
-        console.log(data.user.links.html)
-        console.log(data.user.first_name + ' ' + data.user.last_name)
     })
 }
 
