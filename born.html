@@ -1,0 +1,140 @@
+<html>
+
+<head>
+    <title>New Tab: Born</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <style>
+        body {
+            position: relative;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-size: cover;
+        }
+
+        #cheatycover {
+          background-color: black;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          opacity: .4;
+          z-index: 1;
+        }
+
+        #unplashinfo {
+          position: fixed;
+          bottom: 0;
+          right: 0;
+          font-family: 'Roboto Mono', monospace;
+          word-wrap: normal;
+          font-size: 12px;
+          padding-bottom: 10px;
+          padding-left: 10px;
+          z-index: 2;
+          padding-right: 10px;
+
+        }
+
+        #unplashinfo p{
+          color: white;
+          padding: 1px;
+          transition: .5s;
+          line-height: 5px;
+          cursor: pointer;
+        }
+
+        #unplashinfo a {
+          color: white;
+        }
+
+        #unplashinfo a:hover {
+          color: #d6d7d8;
+        }
+
+        #unplashinfo ul {
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+        }
+
+
+        #favlist {
+          position: fixed;
+          bottom: 0;
+          font-family: 'Roboto Mono', monospace;
+          word-wrap: normal;
+          font-size: 12px;
+          padding-bottom: 10px;
+          padding-left: 10px;
+          z-index: 2;
+
+        }
+
+        #favlist p{
+          color: white;
+          padding: 1px;
+          transition: .5s;
+          text-decoration: underline;
+          line-height: 5px;
+          cursor: pointer;
+        }
+
+        #favlist p:hover {
+          color: #d6d7d8;
+        }
+
+        #favlist ul {
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+        }
+
+        #info {
+          position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          font-family: 'Arimo', sans-serif;
+          color: white;
+          z-index: 2;
+        }
+
+        #info h1 {
+          text-align: center;
+          line-height: 0;
+          font-family: 'Rubik', sans-serif;
+          color: white;
+          font-size: 80px;
+        }
+
+        #info h2 {
+          text-align: center;;
+          line-height: 0;
+          padding-top: 5px;
+          font-family: 'Roboto Mono', monospace;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="favlist", id="favlist">
+</div>
+  <div id="cheatycover"> </div>
+      <div id="info">
+      </div>
+      <div id="unplashinfo">
+      </div>
+
+      <script src='born.js'></script>
+</body>
+
+
+</html>
