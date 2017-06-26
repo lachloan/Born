@@ -18,7 +18,7 @@ function runTime() {
     var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 
-    timediv = document.getElementById('info');
+    timediv = document.getElementById('time-info');
     timediv.innerHTML = " ";
     timediv.innerHTML = timediv.innerHTML + '<h1>' + _time + '</h1><h2>' + dayNames[dt.getDay()] + ' ' + dt.getDate() + ' ' + monthNames[dt.getMonth()] + ', ' + dt.getFullYear()
 }
@@ -31,9 +31,9 @@ setInterval(function() {
 
 
 
-// For top sites information
+// For top sites time-information
 function buildPopupDom(mostVisitedURLs) {
-    var popupDiv = document.getElementById('favlist');
+    var popupDiv = document.getElementById('most-visited');
     var ul = popupDiv.appendChild(document.createElement('ul'));
 
     var count = 0;
@@ -42,12 +42,12 @@ function buildPopupDom(mostVisitedURLs) {
         if (count < "10") {
             count++
             var li = document.createElement('li');
-            li.id = 'favlist_' + count.toString();
+            li.id = 'most-visited_' + count.toString();
             var li = ul.appendChild(li);
             var p = li.appendChild(document.createElement('p'));
             p.href = mostVisitedURLs[i].url;
             var link = mostVisitedURLs[i].url;
-            li.innerHTML = '<p class="favlist_items">' + mostVisitedURLs[i].url + '</p>';
+            li.innerHTML = '<p class="most-visited_items">' + mostVisitedURLs[i].url + '</p>';
             li.onclick = function() {
                 getURL(this)
             }
@@ -93,9 +93,9 @@ function CallMethod() {
         unsplash_url = "www.unsplash.com" + UTM;
 
         if (user_lastname == null) {
-          $("#unplashinfo").append('<p>&lt;Photo By <a href="' + user_url + '">' + user_firstname + '</a> / <a href="' + unsplash_url + '"> Unsplash</a>>');
+          $("#image-attribution").append('<p>&lt;Photo By <a href="' + user_url + '">' + user_firstname + '</a> / <a href="' + unsplash_url + '"> Unsplash</a>>');
         } else {
-            $("#unplashinfo").append('<p>&lt;Photo By <a href="' + user_url + '">' + user_firstname + ' ' + user_lastname + '</a> / <a href="' + unsplash_url + '"> Unsplash</a>>');
+            $("#image-attribution").append('<p>&lt;Photo By <a href="' + user_url + '">' + user_firstname + ' ' + user_lastname + '</a> / <a href="' + unsplash_url + '"> Unsplash</a>>');
         }
 
         console.log(data.user.links.html)

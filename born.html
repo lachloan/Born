@@ -19,7 +19,7 @@
             background-size: cover;
         }
 
-        #cheatycover {
+        #background-cover {
           background-color: black;
           position: absolute;
           width: 100%;
@@ -28,7 +28,7 @@
           z-index: 1;
         }
 
-        #unplashinfo {
+        #image-attribution {
           position: fixed;
           bottom: 0;
           right: 0;
@@ -42,7 +42,7 @@
 
         }
 
-        #unplashinfo p{
+        #image-attribution p{
           color: white;
           padding: 1px;
           transition: .5s;
@@ -50,22 +50,22 @@
           cursor: pointer;
         }
 
-        #unplashinfo a {
+        #image-attribution a {
           color: white;
         }
 
-        #unplashinfo a:hover {
+        #image-attribution a:hover {
           color: #d6d7d8;
         }
 
-        #unplashinfo ul {
+        #image-attribution ul {
           margin: 0;
           padding: 0;
           list-style-type: none;
         }
 
 
-        #favlist {
+        #most-visited {
           position: fixed;
           bottom: 0;
           font-family: 'Roboto Mono', monospace;
@@ -77,7 +77,7 @@
 
         }
 
-        #favlist p{
+        #most-visited p{
           color: white;
           padding: 1px;
           transition: .5s;
@@ -86,17 +86,17 @@
           cursor: pointer;
         }
 
-        #favlist p:hover {
+        #most-visited p:hover {
           color: #d6d7d8;
         }
 
-        #favlist ul {
+        #most-visited ul {
           margin: 0;
           padding: 0;
           list-style-type: none;
         }
 
-        #info {
+        #time-info {
           position: absolute;
             top: 50%;
             left: 50%;
@@ -106,7 +106,7 @@
           z-index: 2;
         }
 
-        #info h1 {
+        #time-info h1 {
           text-align: center;
           line-height: 0;
           font-family: 'Rubik', sans-serif;
@@ -114,7 +114,7 @@
           font-size: 80px;
         }
 
-        #info h2 {
+        #time-info h2 {
           text-align: center;;
           line-height: 0;
           padding-top: 5px;
@@ -125,12 +125,12 @@
 </head>
 
 <body>
-<div class="favlist", id="favlist">
+<div id="most-visited">
 </div>
-  <div id="cheatycover"> </div>
-      <div id="info">
+  <div id="background-cover"> </div>
+      <div id="time-info">
       </div>
-      <div id="unplashinfo">
+      <div id="image-attribution">
       </div>
 
       <script src='born.js'></script>
